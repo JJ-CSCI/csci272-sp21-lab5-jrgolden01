@@ -5,6 +5,70 @@
 //------------------------------
 
 // Write the assignment code here
+#include <iostream>
+using namespace std;
+
+class Real{
+  public:
+  double RealNum;
+  Real(double a=0){
+    RealNum = a;
+  }
+
+  Real operator*(double b){
+    Real a3;
+    a3.RealNum = RealNum + b;
+    return a3;
+  }
+
+  double GetReal(){
+    return RealNum;
+ }
+};
+
+class Complex:public Real{
+  public:
+  double imag;
+
+  Complex(double r=0, double i= 0){
+  RealNum=r;
+  imag=i; 
+}
+
+Complex operator* (double b){
+  Complex c3;
+  c3.RealNum = RealNum +b;
+  c3.imag = imag +b;
+  return c3;
+}
+double GetImaginary(){
+  return imag;
+}
+};
+
+class Surreal:public Complex{
+  public:
+  double surrealNum;
+
+  Surreal(double r=0, double i= 0, double s=0){
+  RealNum=r;
+
+  imag=i; 
+
+  surrealNum=s;
+}
+
+Surreal operator* (double b){
+  Surreal d3;
+  d3.RealNum = RealNum +b;
+  d3.imag = imag +b;
+  d3.surrealNum = surrealNum +b;
+  return d3;
+}
+double GetSurreal(){
+  return surrealNum;
+}
+};
 
 
 //------------------------------
